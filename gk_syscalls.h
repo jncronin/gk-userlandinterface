@@ -18,6 +18,7 @@ struct gk_syscalls
     int (*_fork)();
     int (*_fstat)(int file, struct stat *st);
     int (*_getpid)();
+    int (*_gettimeofday)(void *, void *);
     int (*_isatty)(int file);
     int (*_kill)(int pid, int sig);
     int (*_link)(char *old, char *new);
