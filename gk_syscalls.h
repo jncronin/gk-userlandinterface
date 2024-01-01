@@ -1,13 +1,13 @@
 #ifndef GKSYSCALLS_H
 #define GKSYSCALLS_H
 
-#include <sys/stat.h>
-#include <stdlib.h>
-
 #ifdef __cplusplus
 extern "C"
 {
 #endif
+
+#include <stdint.h>
+#include <sys/stat.h>
 
 struct gk_syscalls
 {
@@ -31,7 +31,9 @@ struct gk_syscalls
     int (*_write)(int file, char *buf, int nbytes);
 
     /* memory management */
-    void *(*_malloc_region)(size_t nbytes, int loc);
+    void *(*_malloc_region)(unsigned int nbytes, int loc);
+
+    /* FreeRTOS interface */
 };
 
 /* memory regions */
