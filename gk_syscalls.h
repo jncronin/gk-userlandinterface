@@ -2,6 +2,7 @@
 #define GKSYSCALLS_H
 
 #include <sys/stat.h>
+#include <stdlib.h>
 
 #ifdef __cplusplus
 extern "C"
@@ -10,6 +11,7 @@ extern "C"
 
 struct gk_syscalls
 {
+    /* newlib libgloss syscalls */
     int (*_close)(int file);
     int (*_execve)(char *name, char **argv, char **env);
     void (*_exit)(int rc);
@@ -27,8 +29,18 @@ struct gk_syscalls
     int (*_unlink)(char *name);
     int (*_wait)(int *status);
     int (*_write)(int file, char *buf, int nbytes);
+
+    /* memory management */
+    void *(*_malloc_region)(size_t nbytes, int loc);
 };
 
+/* memory regions */
+#define GK_MALLOC_REGION_RAM                    0
+#define GK_MALLOC_REGION_SDRAM                  1
+#define GK_MALLOC_REGION_EITHER_PREFER_RAM      2
+#define GK_MALLOC_REGION_EITHER_PREFER_SDRAM    3
+
+/* filled in by ELF loader */
 extern struct gk_syscalls *__gk_syscalls;
 
 #ifdef __cplusplus
