@@ -6,7 +6,8 @@ enum syscall_no
     StartFirstThread = 0,
     GetThreadHandle = 1,
 
-    FlipFrameBuffer
+    FlipFrameBuffer,
+    SetFrameBuffer
 };
 
 #endif
