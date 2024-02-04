@@ -7,7 +7,8 @@ enum syscall_no
     GetThreadHandle = 1,
 
     FlipFrameBuffer,
-    SetFrameBuffer
+    SetFrameBuffer,
+    GetFrameBuffer
 };
 
 enum syscall_framebuffer_pixelformat
@@ -31,7 +32,7 @@ extern "C"
 #define NULL ((void*)0)
 #endif
 
-static inline void *__syscall(syscall_no sno, void *r1, void *r2, void *r3)
+static inline void __syscall(syscall_no sno, void *r1, void *r2, void *r3)
 {
     register unsigned int _sno asm("r0") = sno;
     register void *_r1 asm("r1") = r1;
@@ -40,19 +41,29 @@ static inline void *__syscall(syscall_no sno, void *r1, void *r2, void *r3)
     __asm volatile
     (
         "svc #0                 \n"
-        : "=r"(_r1) : "r"(_sno), "r"(_r1), "r"(_r2), "r"(_r3)
+        :: "r"(_sno), "r"(_r1), "r"(_r2), "r"(_r3) : "memory"
     );
-    return _r1;
 }
 
 static inline void *__syscall_GetThreadHandle()
 {
-    return __syscall(GetThreadHandle, NULL, NULL, NULL);
+    void *ret = NULL;
+    __syscall(GetThreadHandle, &ret, NULL, NULL);
+    return ret;
 }
 
 static inline void *__syscall_FlipFrameBuffer()
 {
-    return __syscall(FlipFrameBuffer, NULL, NULL, NULL);
+    void *ret = NULL;
+    __syscall(FlipFrameBuffer, &ret, NULL, NULL);
+    return ret;
+}
+
+static inline void *__syscall_GetFrameBuffer()
+{
+    void *ret = NULL;
+    __syscall(GetFrameBuffer, &ret, NULL, NULL);
+    return ret;
 }
 
 static inline void __syscall_SetFrameBuffer(void *b0, void *b1, syscall_framebuffer_pixelformat pf)
