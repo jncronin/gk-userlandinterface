@@ -1,6 +1,8 @@
 #ifndef SYSCALLS_H
 #define SYSCALLS_H
 
+#include <sys/types.h>
+
 enum syscall_no
 {
     StartFirstThread = 0,
@@ -28,7 +30,19 @@ enum syscall_no
     __syscall_stat,
     __syscall_unlink,
     __syscall_wait,
-    __syscall_write
+    __syscall_write,
+
+    /* extra non-newlib gk functions */
+    __syscall_waitpid,
+    __syscall_dup,
+    __syscall_chdir,
+    __syscall_fchdir,
+    __syscall_getcwd,
+    __syscall_pipe,
+    __syscall_opendir,
+    __syscall_closedir,
+    __syscall_readdir,
+    __syscall_lstat
 };
 
 /* parameters for above */
@@ -58,6 +72,21 @@ struct __syscall_read_params
     int file;
     char *ptr;
     int len;
+};
+
+struct __syscall_waitpid_params
+{
+    pid_t pid;
+    int *stat_loc;
+    int options;
+    int _errno;
+};
+
+struct __syscall_stat_params
+{
+    const char *path;
+    void *buf;
+    int _errno;
 };
 
 enum syscall_framebuffer_pixelformat
