@@ -58,6 +58,7 @@ struct __syscall_lseek_params
     int file;
     int offset;
     int whence;
+    int _errno;
 };
 
 struct __syscall_open_params
@@ -65,6 +66,7 @@ struct __syscall_open_params
     const char *name;
     int flags;
     int mode;
+    int _errno;
 };
 
 struct __syscall_read_params
@@ -72,6 +74,7 @@ struct __syscall_read_params
     int file;
     char *ptr;
     int len;
+    int _errno;
 };
 
 struct __syscall_waitpid_params
