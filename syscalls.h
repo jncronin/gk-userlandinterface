@@ -49,6 +49,22 @@ enum syscall_no
 };
 
 /* parameters for above */
+struct WaitSimpleSignal_params
+{
+    union
+    {
+        int32_t ival1;
+        uint32_t uval1;
+        void *pval1;
+    };
+    union
+    {
+        int32_t ival2;
+        uint32_t uval2;
+        void *pval2;
+    };
+};
+
 struct __syscall_execve_params
 {
     char *name;
