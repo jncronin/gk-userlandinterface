@@ -12,6 +12,9 @@ enum syscall_no
     SetFrameBuffer,
     GetFrameBuffer,
 
+    /* IPC functions */
+    WaitSimpleSignal,
+
     /* newlib libgloss */
     __syscall_close,
     __syscall_execve,
