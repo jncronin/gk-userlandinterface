@@ -73,7 +73,7 @@ struct __syscall_socket_params
 {
     int domain;
     int type;
-    int protocol
+    int protocol;
 };
 
 struct __syscall_bind_params
