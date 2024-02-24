@@ -45,7 +45,11 @@ enum syscall_no
     __syscall_opendir,
     __syscall_closedir,
     __syscall_readdir,
-    __syscall_lstat
+    __syscall_lstat,
+    __syscall_socket,
+    __syscall_bind,
+    __syscall_accept,
+    __syscall_connect
 };
 
 /* parameters for above */
@@ -63,6 +67,20 @@ struct WaitSimpleSignal_params
         uint32_t uval2;
         void *pval2;
     };
+};
+
+struct __syscall_socket_params
+{
+    int domain;
+    int type;
+    int protocol
+};
+
+struct __syscall_bind_params
+{
+    int sockfd;
+    void *addr;
+    unsigned int addrlen;
 };
 
 struct __syscall_execve_params
