@@ -49,6 +49,7 @@ enum syscall_no
     __syscall_socket,
     __syscall_bind,
     __syscall_accept,
+    __syscall_listen,
     __syscall_connect
 };
 
@@ -81,6 +82,19 @@ struct __syscall_bind_params
     int sockfd;
     void *addr;
     unsigned int addrlen;
+};
+
+struct __syscall_listen_params
+{
+    int sockfd;
+    int backlog;
+};
+
+struct __syscall_accept_params
+{
+    int sockfd;
+    void *addr;
+    void *addrlen;
 };
 
 struct __syscall_execve_params
