@@ -2,6 +2,7 @@
 #define SYSCALLS_H
 
 #include <sys/types.h>
+#include "_netinet_in.h"
 
 enum syscall_no
 {
@@ -80,8 +81,8 @@ struct __syscall_socket_params
 struct __syscall_bind_params
 {
     int sockfd;
-    void *addr;
-    unsigned int addrlen;
+    const sockaddr *addr;
+    socklen_t addrlen;
 };
 
 struct __syscall_listen_params
