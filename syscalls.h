@@ -94,8 +94,8 @@ struct __syscall_listen_params
 struct __syscall_accept_params
 {
     int sockfd;
-    void *addr;
-    void *addrlen;
+    struct sockaddr *addr;
+    socklen_t *addrlen;
 };
 
 struct __syscall_execve_params
