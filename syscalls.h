@@ -54,6 +54,8 @@ enum syscall_no
     __syscall_connect,
 
     __syscall_close2,
+    __syscall_sendto,
+    __syscall_recvfrom,
 };
 
 /* parameters for above */
@@ -83,7 +85,7 @@ struct __syscall_socket_params
 struct __syscall_bind_params
 {
     int sockfd;
-    const sockaddr *addr;
+    const struct sockaddr *addr;
     socklen_t addrlen;
 };
 
@@ -97,6 +99,26 @@ struct __syscall_accept_params
 {
     int sockfd;
     struct sockaddr *addr;
+    socklen_t *addrlen;
+};
+
+struct __syscall_sendto_params
+{
+    int sockfd;
+    const void *buf;
+    size_t len;
+    int flags;
+    const struct sockaddr *dest_addr;
+    socklen_t addrlen;
+};
+
+struct __syscall_recvfrom_params
+{
+    int sockfd;
+    void *buf;
+    size_t len;
+    int flags;
+    struct sockaddr *src_addr;
     socklen_t *addrlen;
 };
 
