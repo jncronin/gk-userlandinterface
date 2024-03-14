@@ -17,7 +17,7 @@ enum syscall_no
     WaitSimpleSignal,
 
     /* newlib libgloss */
-    __syscall_close,
+    __syscall_close1,
     __syscall_execve,
     __syscall_exit,
     __syscall_fork,
@@ -51,7 +51,9 @@ enum syscall_no
     __syscall_bind,
     __syscall_accept,
     __syscall_listen,
-    __syscall_connect
+    __syscall_connect,
+
+    __syscall_close2,
 };
 
 /* parameters for above */
