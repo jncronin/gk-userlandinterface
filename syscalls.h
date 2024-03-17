@@ -56,6 +56,7 @@ enum syscall_no
     __syscall_close2,
     __syscall_sendto,
     __syscall_recvfrom,
+    __syscall_pthread_create
 };
 
 /* parameters for above */
@@ -73,6 +74,14 @@ struct WaitSimpleSignal_params
         uint32_t uval2;
         void *pval2;
     };
+};
+
+struct __syscall_pthread_create_params
+{
+    pthread_t *thread;
+    const pthread_attr_t *attr;
+    void *(*start_routine)(void *);
+    void *arg;
 };
 
 struct __syscall_socket_params
