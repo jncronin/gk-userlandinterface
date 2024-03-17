@@ -3,6 +3,7 @@
 
 #include <sys/types.h>
 #include "_netinet_in.h"
+#include "_gk_proccreate.h"
 
 enum syscall_no
 {
@@ -56,7 +57,8 @@ enum syscall_no
     __syscall_close2,
     __syscall_sendto,
     __syscall_recvfrom,
-    __syscall_pthread_create
+    __syscall_pthread_create,
+    __syscall_proccreate
 };
 
 /* parameters for above */
@@ -74,6 +76,12 @@ struct WaitSimpleSignal_params
         uint32_t uval2;
         void *pval2;
     };
+};
+
+struct __syscall_proccreate_params
+{
+    const char *fname;
+    const struct proccreate_t *proc_info;
 };
 
 struct __syscall_pthread_create_params
