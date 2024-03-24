@@ -5,7 +5,7 @@
 
 struct proccreate_t
 {
-    int acquire_fds[GK_MAX_OPEN_FILES] = { -1 };
+    int acquire_fds[GK_MAX_OPEN_FILES];
 };
 
 #endif
