@@ -2,6 +2,7 @@
 #define SYSCALLS_H
 
 #include <sys/types.h>
+#include <signal.h>
 #include "_netinet_in.h"
 #include "_gk_proccreate.h"
 
@@ -58,7 +59,26 @@ enum syscall_no
     __syscall_sendto,
     __syscall_recvfrom,
     __syscall_pthread_create,
-    __syscall_proccreate
+    __syscall_proccreate,
+    __syscall_pthread_setname_np,
+    __syscall_pthread_sigmask,
+    __syscall_get_thread_priority,
+    __syscall_set_thread_priority,
+    __syscall_pthread_mutex_init,
+    __syscall_pthread_mutex_destroy,
+    __syscall_pthread_mutex_lock,
+    __syscall_pthread_mutex_trylock,
+    __syscall_pthread_mutex_unlock,
+    __syscall_pthread_join,
+    __syscall_pthread_key_create,
+    __syscall_pthread_getspecific,
+    __syscall_pthread_setspecific,
+    __syscall_sleep_ms,
+    __syscall_clock_gettime,
+    __syscall_pthread_cond_init,
+    __syscall_pthread_cond_destroy,
+    __syscall_pthread_cond_timedwait,
+    __syscall_pthread_cond_signal
 };
 
 /* parameters for above */
@@ -215,6 +235,75 @@ enum syscall_framebuffer_pixelformat
     AL44 = 6,
     AL88 = 7
 };
+
+struct __syscall_pthread_setname_np_params
+{
+    pthread_t thread;
+    const char *name;
+};
+
+struct __syscall_pthread_sigmask_params
+{
+    int how;
+    const sigset_t *set;
+    sigset_t *old;
+};
+
+struct __syscall_set_thread_priority_params
+{
+    void *t;
+    int priority;
+};
+
+struct __syscall_pthread_join_params
+{
+    void *t;
+    void **retval;
+};
+
+struct __syscall_pthread_mutex_init_params
+{
+    pthread_mutex_t *mutex;
+    const pthread_mutexattr_t *attr;
+};
+
+struct __syscall_pthread_key_create_params
+{
+    pthread_key_t *key;
+    void (*destructor)(void *);
+};
+
+struct __syscall_pthread_getspecific_params
+{
+    pthread_key_t key;
+    void *retp;
+};
+
+struct __syscall_pthread_setspecific_params
+{
+    pthread_key_t key;
+    const void *value;
+};
+
+struct __syscall_clock_gettime_params
+{
+    clockid_t clk_id;
+    struct timespec *tp;
+};
+
+struct __syscall_pthread_cond_init_params
+{
+    pthread_cond_t *cond;
+    const pthread_condattr_t *attr;
+};
+
+struct __syscall_pthread_cond_timedwait_params
+{
+    pthread_cond_t *cond;
+    pthread_mutex_t *mutex;
+    const struct timespec *abstime;
+};
+
 
 #ifdef __cplusplus
 extern "C"
