@@ -66,7 +66,6 @@ enum syscall_no
     __syscall_set_thread_priority,
     __syscall_pthread_mutex_init,
     __syscall_pthread_mutex_destroy,
-    __syscall_pthread_mutex_lock,
     __syscall_pthread_mutex_trylock,
     __syscall_pthread_mutex_unlock,
     __syscall_pthread_join,
