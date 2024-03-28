@@ -302,6 +302,7 @@ struct __syscall_pthread_cond_timedwait_params
     pthread_cond_t *cond;
     pthread_mutex_t *mutex;
     const struct timespec *abstime;
+    bool *signalled;
 };
 
 
