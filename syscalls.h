@@ -70,6 +70,7 @@ enum syscall_no
     __syscall_pthread_mutex_unlock,
     __syscall_pthread_join,
     __syscall_pthread_key_create,
+    __syscall_pthread_key_delete,
     __syscall_pthread_getspecific,
     __syscall_pthread_setspecific,
     __syscall_sleep_ms,
@@ -275,7 +276,7 @@ struct __syscall_pthread_key_create_params
 struct __syscall_pthread_getspecific_params
 {
     pthread_key_t key;
-    void *retp;
+    void **retp;
 };
 
 struct __syscall_pthread_setspecific_params
