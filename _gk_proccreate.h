@@ -6,6 +6,7 @@
 struct proccreate_t
 {
     int acquire_fds[GK_MAX_OPEN_FILES];
+    uint32_t heap_size;
 };
 
 #endif
