@@ -8,7 +8,9 @@ enum gpu_message_type
     FlipBuffers,
     SetBuffers,
     BlitColor,
-    BlitImage
+    BlitImage,
+    CleanCache,
+    SignalThread
 };
 
 struct gpu_message
