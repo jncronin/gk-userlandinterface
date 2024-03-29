@@ -5,6 +5,7 @@
 #include <signal.h>
 #include "_netinet_in.h"
 #include "_gk_proccreate.h"
+#include "_gk_gpu.h"
 
 enum syscall_no
 {
@@ -78,7 +79,13 @@ enum syscall_no
     __syscall_pthread_cond_init,
     __syscall_pthread_cond_destroy,
     __syscall_pthread_cond_timedwait,
-    __syscall_pthread_cond_signal
+    __syscall_pthread_cond_signal,
+
+    __syscall_memalloc,
+    __syscall_memdealloc,
+    __syscall_setprot,
+
+    __syscall_gpuenqueue
 };
 
 /* parameters for above */
@@ -303,6 +310,31 @@ struct __syscall_pthread_cond_timedwait_params
     pthread_mutex_t *mutex;
     const struct timespec *abstime;
     int *signalled;
+};
+
+struct __syscall_memalloc_params
+{
+    size_t len;
+    void **retaddr;
+};
+
+struct __syscall_memdealloc_params
+{
+    size_t len;
+    const void *retaddr;
+};
+
+struct __syscall_setprot_params
+{
+    void *addr;
+    int is_read, is_write, is_exec;
+};
+
+struct __syscall_gpuenqueue_params
+{
+    const struct gpu_message *msgs;
+    size_t nmsg;
+    size_t *nsent;
 };
 
 
