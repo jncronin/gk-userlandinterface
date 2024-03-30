@@ -7,6 +7,8 @@ struct proccreate_t
 {
     int acquire_fds[GK_MAX_OPEN_FILES];
     uint32_t heap_size;
+    unsigned int core_mask;
+    unsigned int prefer_core_mask;
 };
 
 #endif
