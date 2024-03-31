@@ -367,25 +367,6 @@ static inline void *__syscall_GetThreadHandle()
     return ret;
 }
 
-static inline void *__syscall_FlipFrameBuffer()
-{
-    void *ret = NULL;
-    __syscall(FlipFrameBuffer, &ret, NULL, NULL);
-    return ret;
-}
-
-static inline void *__syscall_GetFrameBuffer()
-{
-    void *ret = NULL;
-    __syscall(GetFrameBuffer, &ret, NULL, NULL);
-    return ret;
-}
-
-static inline void __syscall_SetFrameBuffer(void *b0, void *b1, enum syscall_framebuffer_pixelformat pf)
-{
-    __syscall(SetFrameBuffer, b0, b1, (void*)pf);
-}
-
 #ifdef __cplusplus
 }
 #endif
