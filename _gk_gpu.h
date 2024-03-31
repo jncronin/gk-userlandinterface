@@ -3,6 +3,11 @@
 
 #include <stdint.h>
 
+#define GK_PIXELFORMAT_ARGB8888     0
+#define GK_PIXELFORMAT_RGB888       1
+#define GK_PIXELFORMAT_RGB565       2
+#define GK_PIXELFORMAT_L8           5
+
 enum gpu_message_type
 {
     FlipBuffers,
@@ -20,8 +25,7 @@ struct gpu_message
     uint32_t src_addr_color;
     uint32_t dest_pf;
     uint32_t src_pf;
-    uint32_t nlines, row_width;
-    int dest_fbuf_relative;
+    uint16_t dx, dy, sx, sy, w, h, dp, sp;
 };
 
 #endif

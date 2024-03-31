@@ -9,6 +9,8 @@ struct proccreate_t
     uint32_t heap_size;
     unsigned int core_mask;
     unsigned int prefer_core_mask;
+    unsigned int with_focus;
+    unsigned int pixel_format;
 };
 
 #endif
