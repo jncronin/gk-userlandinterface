@@ -15,7 +15,8 @@ enum gpu_message_type
     BlitColor,
     BlitImage,
     CleanCache,
-    SignalThread
+    SignalThread,
+    ClearScreen,
 };
 
 struct gpu_message

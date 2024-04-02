@@ -85,7 +85,12 @@ enum syscall_no
     __syscall_memdealloc,
     __syscall_setprot,
 
-    __syscall_gpuenqueue
+    __syscall_gpuenqueue,
+
+    __syscall_mkdir,
+    __syscall_mkfifo,
+    __syscall_rmdir,
+    __syscall_chmod
 };
 
 /* parameters for above */
@@ -335,6 +340,12 @@ struct __syscall_gpuenqueue_params
     const struct gpu_message *msgs;
     size_t nmsg;
     size_t *nsent;
+};
+
+struct __syscall_mkdir_params
+{
+    const char *pathname;
+    mode_t mode;
 };
 
 
