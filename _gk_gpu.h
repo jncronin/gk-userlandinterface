@@ -17,6 +17,7 @@ enum gpu_message_type
     CleanCache,
     SignalThread,
     ClearScreen,
+    SetScreenMode
 };
 
 struct gpu_message
