@@ -29,8 +29,7 @@ struct gpu_message
     uint32_t src_addr_color;
     uint32_t dest_pf;
     uint32_t src_pf;
-    float scale_x, scale_y;
-    uint16_t dx, dy, sx, sy, w, h, dp, sp;
+    uint16_t dx, dy, sx, sy, w, h, dp, sp, dw, dh;
 };
 
 #endif
