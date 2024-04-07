@@ -90,7 +90,9 @@ enum syscall_no
     __syscall_mkdir,
     __syscall_mkfifo,
     __syscall_rmdir,
-    __syscall_chmod
+    __syscall_chmod,
+
+    __syscall_times
 };
 
 /* parameters for above */
@@ -346,6 +348,12 @@ struct __syscall_mkdir_params
 {
     const char *pathname;
     mode_t mode;
+};
+
+struct __syscall_times_params
+{
+    struct tms *buf;
+    clock_t *retval;
 };
 
 
