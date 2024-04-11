@@ -11,6 +11,8 @@ struct proccreate_t
     unsigned int prefer_core_mask;
     unsigned int with_focus;
     unsigned int pixel_format;
+    int argc;
+    const char **argv;
 };
 
 #endif
