@@ -92,7 +92,9 @@ enum syscall_no
     __syscall_rmdir,
     __syscall_chmod,
 
-    __syscall_times
+    __syscall_times,
+
+    __syscall_peekevent
 };
 
 /* parameters for above */
