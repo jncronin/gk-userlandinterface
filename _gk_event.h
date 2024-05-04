@@ -14,7 +14,7 @@ struct Event
         AxisMotion
     };
 
-    event_type_t type;
+    enum event_type_t type;
 
     union
     {
