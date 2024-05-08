@@ -100,7 +100,9 @@ enum syscall_no
 
     __syscall_getscreenmode,
 
-    __syscall_newlibinithook
+    __syscall_newlibinithook,
+
+    __syscall_pthread_exit
 };
 
 /* parameters for above */
