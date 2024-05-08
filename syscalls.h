@@ -99,6 +99,8 @@ enum syscall_no
     __syscall_ftruncate,
 
     __syscall_getscreenmode,
+
+    __syscall_newlibinithook
 };
 
 /* parameters for above */
