@@ -13,6 +13,8 @@ struct proccreate_t
     unsigned int pixel_format;
     int argc;
     const char **argv;
+    uint32_t stack_size;
+    int is_priv;
 };
 
 #endif
