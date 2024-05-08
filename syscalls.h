@@ -96,7 +96,9 @@ enum syscall_no
 
     __syscall_peekevent,
 
-    __syscall_ftruncate
+    __syscall_ftruncate,
+
+    __syscall_getscreenmode,
 };
 
 /* parameters for above */
@@ -366,6 +368,10 @@ struct __syscall_ftruncate_params
     off_t length;
 };
 
+struct __syscall_getscreenmode_params
+{
+    int *x, *y, *pf;
+};
 
 #ifdef __cplusplus
 extern "C"
