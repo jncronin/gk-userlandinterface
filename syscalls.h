@@ -94,7 +94,9 @@ enum syscall_no
 
     __syscall_times,
 
-    __syscall_peekevent
+    __syscall_peekevent,
+
+    __syscall_ftruncate
 };
 
 /* parameters for above */
@@ -356,6 +358,12 @@ struct __syscall_times_params
 {
     struct tms *buf;
     clock_t *retval;
+};
+
+struct __syscall_ftruncate_params
+{
+    int fd;
+    off_t length;
 };
 
 
