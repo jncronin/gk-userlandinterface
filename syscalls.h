@@ -333,6 +333,7 @@ struct __syscall_memalloc_params
 {
     size_t len;
     void **retaddr;
+    int is_sync;
 };
 
 struct __syscall_memdealloc_params
