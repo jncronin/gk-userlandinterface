@@ -378,6 +378,12 @@ struct __syscall_getscreenmode_params
     int *x, *y, *pf;
 };
 
+struct __syscall_readdir_params
+{
+    int fd;
+    struct dirent *de;
+};
+
 #ifdef __cplusplus
 extern "C"
 {
