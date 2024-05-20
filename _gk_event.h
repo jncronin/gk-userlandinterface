@@ -11,7 +11,8 @@ struct Event
         MouseUp,
         ButtonDown,
         ButtonUp,
-        AxisMotion
+        AxisMotion,
+        CaptionChange
     };
 
     enum event_type_t type;
