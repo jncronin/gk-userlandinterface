@@ -102,7 +102,9 @@ enum syscall_no
 
     __syscall_newlibinithook,
 
-    __syscall_pthread_exit
+    __syscall_pthread_exit,
+
+    __syscall_setwindowtitle,
 };
 
 /* parameters for above */
