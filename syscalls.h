@@ -105,6 +105,8 @@ enum syscall_no
     __syscall_pthread_exit,
 
     __syscall_setwindowtitle,
+
+    __syscall_cacheflush,
 };
 
 /* parameters for above */
@@ -384,6 +386,13 @@ struct __syscall_readdir_params
 {
     int fd;
     struct dirent *de;
+};
+
+struct __syscall_cacheflush_params
+{
+    void *addr;
+    size_t len;
+    int is_exec;
 };
 
 #ifdef __cplusplus
