@@ -15,6 +15,7 @@ struct proccreate_t
     const char **argv;
     uint32_t stack_size;
     int is_priv;
+    int heap_is_exec;
 };
 
 #endif
