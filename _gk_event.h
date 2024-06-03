@@ -7,7 +7,7 @@ struct Event
         KeyDown,
         KeyUp,
         MouseDown,
-        MouseDrag,
+        MouseMove,
         MouseUp,
         ButtonDown,
         ButtonUp,
@@ -22,7 +22,9 @@ struct Event
         unsigned short int key;
         struct 
         {
-            unsigned short int x, y;
+            short int x, y;
+            unsigned char is_rel;
+            unsigned char buttons;
         } mouse_data;
         struct
         {
