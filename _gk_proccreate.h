@@ -16,6 +16,7 @@ struct proccreate_t
     uint32_t stack_size;
     int is_priv;
     int heap_is_exec;
+    const char *cwd;
 };
 
 #endif
