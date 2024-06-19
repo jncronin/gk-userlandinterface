@@ -13,9 +13,7 @@ struct Event
         ButtonUp,
         AxisMotion,
         CaptionChange
-    };
-
-    enum event_type_t type;
+    } type;
 
     union
     {
