@@ -37,6 +37,9 @@ struct sockaddr_in
 
 #define AF_UNIX         0
 #define AF_INET         1
+#define AF_INET6        2
+
+#define AF_MAX          0x10
 
 #define PF_UNIX         (AF_UNIX)
 #define PF_INET         (AF_INET)
