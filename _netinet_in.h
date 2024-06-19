@@ -13,7 +13,8 @@ typedef uint32_t socklen_t;
 
 struct sockaddr
 {
-    sa_family_t     ss_family;
+    sa_family_t     sa_family;
+    char            sa_data[128 - sizeof(sa_family_t)];
 };
 
 struct in_addr
@@ -36,6 +37,11 @@ struct sockaddr_in
 
 #define AF_UNIX         0
 #define AF_INET         1
+
+#define PF_UNIX         (AF_UNIX)
+#define PF_INET         (AF_INET)
+
+#define AF_UNSPEC       0xff
 
 #define SOCK_DGRAM      0
 #define SOCK_RAW        1
