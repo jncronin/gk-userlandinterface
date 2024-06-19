@@ -107,6 +107,7 @@ enum syscall_no
     __syscall_setwindowtitle,
 
     __syscall_cacheflush,
+    __syscall_rewinddir
 };
 
 /* parameters for above */
