@@ -1,6 +1,9 @@
 #ifndef SYSCALLS_H
 #define SYSCALLS_H
 
+#define _POSIX_READER_WRITER_LOCKS
+#define _UNIX98_THREAD_MUTEX_ATTRIBUTES
+
 #include <sys/types.h>
 #include <signal.h>
 #include "_netinet_in.h"
@@ -107,7 +110,13 @@ enum syscall_no
     __syscall_setwindowtitle,
 
     __syscall_cacheflush,
-    __syscall_rewinddir
+    __syscall_rewinddir,
+
+    __syscall_pthread_rwlock_init,
+    __syscall_pthread_rwlock_destroy,
+    __syscall_pthread_rwlock_tryrdlock,
+    __syscall_pthread_rwlock_trywrlock,
+    __syscall_pthread_rwlock_unlock
 };
 
 /* parameters for above */
@@ -294,6 +303,13 @@ struct __syscall_pthread_mutex_init_params
 {
     pthread_mutex_t *mutex;
     const pthread_mutexattr_t *attr;
+};
+
+struct __syscall_pthread_rwlock_init_params
+{
+
+    pthread_rwlock_t *lock;
+    const pthread_rwlockattr_t *attr;
 };
 
 struct __syscall_pthread_key_create_params
