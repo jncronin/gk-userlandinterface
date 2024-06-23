@@ -116,7 +116,9 @@ enum syscall_no
     __syscall_pthread_rwlock_destroy,
     __syscall_pthread_rwlock_tryrdlock,
     __syscall_pthread_rwlock_trywrlock,
-    __syscall_pthread_rwlock_unlock
+    __syscall_pthread_rwlock_unlock,
+
+    __syscall_read_tp
 };
 
 /* parameters for above */
