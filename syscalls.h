@@ -1,8 +1,12 @@
 #ifndef SYSCALLS_H
 #define SYSCALLS_H
 
+#ifndef _POSIX_READER_WRITER_LOCKS
 #define _POSIX_READER_WRITER_LOCKS
+#endif
+#ifndef _UNIX98_THREAD_MUTEX_ATTRIBUTES
 #define _UNIX98_THREAD_MUTEX_ATTRIBUTES
+#endif
 
 #include <sys/types.h>
 #include <signal.h>
