@@ -128,7 +128,9 @@ enum syscall_no
     __syscall_sem_destroy,
     __syscall_sem_trywait,
     __syscall_sem_post,
-    __syscall_sem_getvalue
+    __syscall_sem_getvalue,
+
+    __syscall_thread_cleanup
 };
 
 /* parameters for above */
