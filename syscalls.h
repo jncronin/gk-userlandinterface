@@ -122,7 +122,13 @@ enum syscall_no
     __syscall_pthread_rwlock_trywrlock,
     __syscall_pthread_rwlock_unlock,
 
-    __syscall_read_tp
+    __syscall_read_tp,
+
+    __syscall_sem_init,
+    __syscall_sem_destroy,
+    __syscall_sem_trywait,
+    __syscall_sem_post,
+    __syscall_sem_getvalue
 };
 
 /* parameters for above */
@@ -416,6 +422,19 @@ struct __syscall_cacheflush_params
     void *addr;
     size_t len;
     int is_exec;
+};
+
+struct __syscall_sem_init_params
+{
+    void *sem;
+    int pshared;
+    unsigned int value;
+};
+
+struct __syscall_sem_getvalue_params
+{
+    void *sem;
+    int *outval;
 };
 
 #ifdef __cplusplus
