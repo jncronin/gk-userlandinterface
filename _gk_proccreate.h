@@ -18,6 +18,7 @@ struct proccreate_t
     int heap_is_exec;
     const char *cwd;
     unsigned short screen_w, screen_h;
+    int screen_ignore_vsync;
 };
 
 #endif
