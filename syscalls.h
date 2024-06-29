@@ -150,6 +150,16 @@ struct WaitSimpleSignal_params
     };
 };
 
+#define CLOCK_WAIT_FOREVER      -1
+#define CLOCK_TRY_ONCE          -2
+
+struct __syscall_trywait_params
+{
+    void *sync;
+    int clock_id;
+    const struct timespec *until;
+};
+
 struct __syscall_proccreate_params
 {
     const char *fname;
