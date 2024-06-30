@@ -5,6 +5,15 @@
 
 #define GK_NUMKEYS              8
 
+#define GK_KEYLEFT              0
+#define GK_KEYRIGHT             1
+#define GK_KEYUP                2
+#define GK_KEYDOWN              3
+#define GK_KEYA                 4
+#define GK_KEYB                 5
+#define GK_KEYX                 6
+#define GK_KEYY                 7
+
 struct prockeymap_t
 {
     char gamepad_is_keyboard;
