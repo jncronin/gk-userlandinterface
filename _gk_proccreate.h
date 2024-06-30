@@ -3,6 +3,16 @@
 
 #define GK_MAX_OPEN_FILES      16
 
+#define GK_NUMKEYS              8
+
+struct prockeymap_t
+{
+    char gamepad_is_keyboard;
+    char gamepad_is_mouse;
+    char gamepad_is_joystick;
+    unsigned short int gamepad_to_scancode[GK_NUMKEYS];
+};
+
 struct proccreate_t
 {
     int acquire_fds[GK_MAX_OPEN_FILES];
@@ -19,6 +29,8 @@ struct proccreate_t
     const char *cwd;
     unsigned short screen_w, screen_h;
     int screen_ignore_vsync;
+
+    struct prockeymap_t keymap;
 };
 
 #endif
