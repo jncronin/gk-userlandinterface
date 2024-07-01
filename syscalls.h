@@ -164,6 +164,7 @@ struct __syscall_proccreate_params
 {
     const char *fname;
     const struct proccreate_t *proc_info;
+    pid_t *pid;
 };
 
 struct __syscall_pthread_create_params
