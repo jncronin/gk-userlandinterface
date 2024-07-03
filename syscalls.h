@@ -130,7 +130,11 @@ enum syscall_no
     __syscall_sem_post,
     __syscall_sem_getvalue,
 
-    __syscall_thread_cleanup
+    __syscall_thread_cleanup,
+
+    __syscall_audiosetmode,
+    __syscall_audioenable,
+    __syscall_audioqueuebuffer
 };
 
 /* parameters for above */
@@ -448,6 +452,20 @@ struct __syscall_sem_getvalue_params
 {
     void *sem;
     int *outval;
+};
+
+struct __syscall_audiosetmode_params
+{
+    int nchan;
+    int nbits;
+    int freq;
+    size_t buf_size_bytes;
+};
+
+struct __syscall_audioqueuebuffer_params
+{
+    const void *buffer;
+    void **next_buffer;
 };
 
 #ifdef __cplusplus
