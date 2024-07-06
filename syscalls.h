@@ -134,7 +134,8 @@ enum syscall_no
 
     __syscall_audiosetmode,
     __syscall_audioenable,
-    __syscall_audioqueuebuffer
+    __syscall_audioqueuebuffer,
+    __syscall_audiowaitfree
 };
 
 /* parameters for above */
