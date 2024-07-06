@@ -3,7 +3,7 @@
 
 #define GK_MAX_OPEN_FILES      16
 
-#define GK_NUMKEYS              8
+#define GK_NUMKEYS              10
 
 #define GK_KEYLEFT              0
 #define GK_KEYRIGHT             1
@@ -13,6 +13,8 @@
 #define GK_KEYB                 5
 #define GK_KEYX                 6
 #define GK_KEYY                 7
+#define GK_KEYVOLDOWN           8
+#define GK_KEYVOLUP             9
 
 struct prockeymap_t
 {
