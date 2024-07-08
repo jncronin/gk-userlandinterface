@@ -3,7 +3,7 @@
 
 #define GK_MAX_OPEN_FILES      16
 
-#define GK_NUMKEYS              10
+#define GK_NUMKEYS              14
 
 #define GK_KEYLEFT              0
 #define GK_KEYRIGHT             1
@@ -15,12 +15,18 @@
 #define GK_KEYY                 7
 #define GK_KEYVOLDOWN           8
 #define GK_KEYVOLUP             9
+#define GK_KEYTILTLEFT          10
+#define GK_KEYTILTRIGHT         11
+#define GK_KEYTILTUP            12
+#define GK_KEYTILTDOWN          13
 
 struct prockeymap_t
 {
     char gamepad_is_keyboard;
     char gamepad_is_mouse;
     char gamepad_is_joystick;
+    char tilt_is_keyboard;
+    char tilt_is_joystick;
     unsigned short int gamepad_to_scancode[GK_NUMKEYS];
 };
 
