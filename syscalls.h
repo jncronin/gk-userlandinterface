@@ -14,6 +14,8 @@
 #include "_gk_proccreate.h"
 #include "_gk_gpu.h"
 
+#define GK_TLS_POINTER_ADDRESS      0x30002000U
+
 enum syscall_no
 {
     StartFirstThread = 0,
