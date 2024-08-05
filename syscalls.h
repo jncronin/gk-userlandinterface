@@ -139,7 +139,8 @@ enum syscall_no
     __syscall_audioqueuebuffer,
     __syscall_audiowaitfree,
 
-    __syscall_pthread_detach
+    __syscall_pthread_detach,
+    __syscall_pthread_cancel
 };
 
 /* parameters for above */
