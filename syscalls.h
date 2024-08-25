@@ -141,7 +141,10 @@ enum syscall_no
 
     __syscall_pthread_detach,
     __syscall_pthread_cancel,
-    __syscall_getheap
+    __syscall_getheap,
+
+    __syscall_sched_get_priority_min,
+    __syscall_sched_get_priority_max
 };
 
 /* parameters for above */
