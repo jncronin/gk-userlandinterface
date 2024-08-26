@@ -146,7 +146,10 @@ enum syscall_no
     __syscall_sched_get_priority_min,
     __syscall_sched_get_priority_max,
 
-    __syscall_sleep_us
+    __syscall_sleep_us,
+    __syscall_get_env_count,
+    __syscall_get_ienv_size,
+    __syscall_get_ienv
 };
 
 /* parameters for above */
@@ -478,6 +481,13 @@ struct __syscall_audioqueuebuffer_params
 {
     const void *buffer;
     void **next_buffer;
+};
+
+struct __syscall_get_ienv_params
+{
+    char *outbuf;
+    size_t outbuf_size;
+    unsigned int i;
 };
 
 #ifdef __cplusplus
