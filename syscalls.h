@@ -144,7 +144,9 @@ enum syscall_no
     __syscall_getheap,
 
     __syscall_sched_get_priority_min,
-    __syscall_sched_get_priority_max
+    __syscall_sched_get_priority_max,
+
+    __syscall_sleep_us
 };
 
 /* parameters for above */
