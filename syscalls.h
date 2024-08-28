@@ -15,6 +15,8 @@
 #include "_gk_gpu.h"
 
 #define GK_TLS_POINTER_ADDRESS      0x30002000U
+#define GK_CUR_MS_ADDRESS           0x30002010U
+#define GK_TOFFSET_ADDRESS          0x30002020U
 
 enum syscall_no
 {
