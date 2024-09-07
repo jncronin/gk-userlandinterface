@@ -151,7 +151,8 @@ enum syscall_no
     __syscall_sleep_us,
     __syscall_get_env_count,
     __syscall_get_ienv_size,
-    __syscall_get_ienv
+    __syscall_get_ienv,
+    __syscall_set_leds,
 };
 
 /* parameters for above */
@@ -490,6 +491,12 @@ struct __syscall_get_ienv_params
     char *outbuf;
     size_t outbuf_size;
     unsigned int i;
+};
+
+struct __syscall_set_led_params
+{
+    int led_id;
+    uint32_t color;
 };
 
 #ifdef __cplusplus
