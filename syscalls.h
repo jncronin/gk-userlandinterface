@@ -499,6 +499,8 @@ struct __syscall_set_led_params
     uint32_t color;
 };
 
+#define GK_LED_MAIN         1
+
 #ifdef __cplusplus
 extern "C"
 {
