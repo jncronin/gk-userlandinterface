@@ -153,6 +153,7 @@ enum syscall_no
     __syscall_get_ienv_size,
     __syscall_get_ienv,
     __syscall_set_leds,
+    __syscall_audiosetfreq
 };
 
 /* parameters for above */
