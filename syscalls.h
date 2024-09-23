@@ -17,6 +17,7 @@
 #define GK_TLS_POINTER_ADDRESS      0x30002000U
 #define GK_CUR_MS_ADDRESS           0x30002010U
 #define GK_TOFFSET_ADDRESS          0x30002020U
+#define GK_FAST_ACCESS_SIZE         0x40U
 
 enum syscall_no
 {
