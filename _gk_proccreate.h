@@ -34,6 +34,9 @@ struct prockeymap_t
     unsigned short int gamepad_to_scancode[GK_NUMKEYS];
 };
 
+#define STACK_PREFERENCE_TCM_RAM_SDRAM      0
+#define STACK_PREFERENCE_SDRAM_RAM_TCM      1
+
 struct proccreate_t
 {
     int acquire_fds[GK_MAX_OPEN_FILES];
@@ -52,6 +55,8 @@ struct proccreate_t
     int screen_ignore_vsync;
 
     struct prockeymap_t keymap;
+
+    unsigned int stack_preference;
 };
 
 #endif
