@@ -508,6 +508,7 @@ struct __syscall_nemaenable_params
     size_t nmutexes;
     void *rb;
     void *irq_sem;
+    pthread_mutex_t *eof_mutex;
 };
 
 #define GK_LED_MAIN         1
