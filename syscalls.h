@@ -153,7 +153,9 @@ enum syscall_no
     __syscall_get_ienv_size,
     __syscall_get_ienv,
     __syscall_set_leds,
-    __syscall_audiosetfreq
+    __syscall_audiosetfreq,
+
+    __syscall_nemaenable
 };
 
 /* parameters for above */
@@ -498,6 +500,14 @@ struct __syscall_set_led_params
 {
     int led_id;
     uint32_t color;
+};
+
+struct __syscall_nemaenable_params
+{
+    pthread_mutex_t *mutexes;
+    size_t nmutexes;
+    void *rb;
+    void *irq_sem;
 };
 
 #define GK_LED_MAIN         1
