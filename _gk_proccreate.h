@@ -35,6 +35,8 @@ struct prockeymap_t
     char gamepad_is_joystick;
     char tilt_is_keyboard;
     char tilt_is_joystick;
+    char joystick_is_joystick;
+    char touch_is_mouse;
     unsigned short int gamepad_to_scancode[GK_NUMKEYS];
 };
 
