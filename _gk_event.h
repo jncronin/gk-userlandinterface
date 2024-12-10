@@ -12,7 +12,8 @@ struct Event
         ButtonDown,
         ButtonUp,
         AxisMotion,
-        CaptionChange
+        CaptionChange,
+        RefreshScreen,
     } type;
 
     union
