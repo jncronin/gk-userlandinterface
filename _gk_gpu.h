@@ -21,6 +21,7 @@ enum gpu_message_type
     SetScreenMode,
     FlipScaleBuffers,
     BlitImageNoBlend,
+    InvalidateCache
 };
 
 struct gpu_message
