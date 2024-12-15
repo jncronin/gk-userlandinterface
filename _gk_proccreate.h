@@ -63,6 +63,8 @@ struct proccreate_t
     struct prockeymap_t keymap;
 
     unsigned int stack_preference;
+
+    uint32_t graphics_texture_size;
 };
 
 #endif
