@@ -155,7 +155,9 @@ enum syscall_no
     __syscall_set_leds,
     __syscall_audiosetfreq,
 
-    __syscall_nemaenable
+    __syscall_nemaenable,
+
+    __syscall_realpath,
 };
 
 /* parameters for above */
@@ -509,6 +511,13 @@ struct __syscall_nemaenable_params
     void *rb;
     void *irq_sem;
     pthread_mutex_t *eof_mutex;
+};
+
+struct __syscall_realpath_params
+{
+    const char *path;
+    char *resolved_path;
+    size_t len;
 };
 
 #define GK_LED_MAIN         1
