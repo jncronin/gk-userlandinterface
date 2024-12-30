@@ -520,6 +520,12 @@ struct __syscall_realpath_params
     size_t len;
 };
 
+struct __syscall_dup_params
+{
+    int fd1;
+    int fd2;
+};
+
 #define GK_LED_MAIN         1
 
 #ifdef __cplusplus
