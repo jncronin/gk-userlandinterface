@@ -52,7 +52,7 @@ enum syscall_no
 
     /* extra non-newlib gk functions */
     __syscall_waitpid,
-    __syscall_dup,
+    __syscall_dup2,
     __syscall_chdir,
     __syscall_fchdir,
     __syscall_getcwd,
