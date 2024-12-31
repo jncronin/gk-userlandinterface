@@ -431,8 +431,12 @@ typedef enum
 
     /* Add any other keys here. */
 
-    GK_NUM_SCANCODES = 512 /**< not a key, just marks the number of scancodes
+    GK_NUM_SCANCODES = 512, /**< not a key, just marks the number of scancodes
                                  for array bounds */
+
+    GK_MODIFIER_SHIFT = 1024,
+    GK_MODIFIER_CTRL = 2048,
+    GK_MODIFIER_ALT = 4096
 } GK_Scancode;
 
 #endif /* GK_SCANCODE_h_ */
