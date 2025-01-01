@@ -14,6 +14,7 @@ struct Event
         AxisMotion,
         CaptionChange,
         RefreshScreen,
+        SupervisorSetVisible
     } type;
 
     union
@@ -30,6 +31,11 @@ struct Event
             short int axis;
             short int value;
         } axis_data;
+        struct
+        {
+            short int visible;
+            short int screen;
+        } setvis_data;
     };
 };
 
