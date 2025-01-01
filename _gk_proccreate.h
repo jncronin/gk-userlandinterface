@@ -65,6 +65,7 @@ struct proccreate_t
     unsigned int stack_preference;
 
     uint32_t graphics_texture_size;
+    const char *osd;
 };
 
 #endif
