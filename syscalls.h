@@ -158,6 +158,8 @@ enum syscall_no
     __syscall_nemaenable,
 
     __syscall_realpath,
+
+    __syscall_setsupervisorvisible,
 };
 
 /* parameters for above */
@@ -524,6 +526,12 @@ struct __syscall_dup_params
 {
     int fd1;
     int fd2;
+};
+
+struct __syscall_setsupervisorvisible_params
+{
+    int visible;
+    int screen;
 };
 
 #define GK_LED_MAIN         1
