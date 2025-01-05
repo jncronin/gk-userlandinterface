@@ -160,6 +160,7 @@ enum syscall_no
     __syscall_realpath,
 
     __syscall_setsupervisorvisible,
+    __syscall_audiosetmodeex,
 };
 
 /* parameters for above */
@@ -485,6 +486,15 @@ struct __syscall_audiosetmode_params
     int nbits;
     int freq;
     size_t buf_size_bytes;
+};
+
+struct __syscall_audiosetmodeex_params
+{
+    int nchan;
+    int nbits;
+    int freq;
+    size_t buf_size_bytes;
+    size_t nbufs;
 };
 
 struct __syscall_audioqueuebuffer_params
