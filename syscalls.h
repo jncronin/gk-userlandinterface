@@ -161,6 +161,7 @@ enum syscall_no
 
     __syscall_setsupervisorvisible,
     __syscall_audiosetmodeex,
+    __syscall_audiogetbufferpos,
 };
 
 /* parameters for above */
@@ -542,6 +543,17 @@ struct __syscall_setsupervisorvisible_params
 {
     int visible;
     int screen;
+};
+
+struct __syscall_audiogetbufferpos_params
+{
+    size_t *nbufs;
+    size_t *curbuf;
+    size_t *buflen;
+    size_t *bufpos;
+    int *nchan;
+    int *nbits;
+    int *freq;
 };
 
 #define GK_LED_MAIN         1
