@@ -21,7 +21,10 @@ enum gpu_message_type
     SetScreenMode,
     FlipScaleBuffers,
     BlitImageNoBlend,
-    InvalidateCache
+    InvalidateCache,
+
+
+    gpu_message_type_last = 2147483647  // force enum to 4 bytes
 };
 
 struct gpu_message

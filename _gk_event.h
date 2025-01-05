@@ -14,7 +14,10 @@ struct Event
         AxisMotion,
         CaptionChange,
         RefreshScreen,
-        SupervisorSetVisible
+        SupervisorSetVisible,
+
+
+        event_type_last = 2147483647  // force enum to 4 bytes
     } type;
 
     union

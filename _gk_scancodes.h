@@ -436,7 +436,9 @@ typedef enum
 
     GK_MODIFIER_SHIFT = 1024,
     GK_MODIFIER_CTRL = 2048,
-    GK_MODIFIER_ALT = 4096
+    GK_MODIFIER_ALT = 4096,
+
+    gk_scancode_last = 2147483647  // force enum to 4 bytes
 } GK_Scancode;
 
 #endif /* GK_SCANCODE_h_ */
