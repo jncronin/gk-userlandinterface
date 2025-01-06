@@ -1,0 +1,10 @@
+#ifndef __GK_MEMADDRS_H
+#define __GK_MEMADDRS_H
+
+#define GK_TLS_POINTER_ADDRESS      0x58004518U
+#define GK_CUR_MS_ADDRESS           0x58004500U
+#define GK_TOFFSET_ADDRESS          0x58004508U
+#define GK_JOYSTICK_ADDRESS         0x5800451cU
+#define GK_TILT_ADDRESS             0x58004530U
+
+#endif

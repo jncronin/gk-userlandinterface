@@ -13,10 +13,7 @@
 #include "_netinet_in.h"
 #include "_gk_proccreate.h"
 #include "_gk_gpu.h"
-
-#define GK_TLS_POINTER_ADDRESS      0x58004518U
-#define GK_CUR_MS_ADDRESS           0x58004500U
-#define GK_TOFFSET_ADDRESS          0x58004508U
+#include "_gk_memaddrs.h"
 
 enum syscall_no
 {
