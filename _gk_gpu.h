@@ -23,6 +23,7 @@ enum gpu_message_type
     BlitImageNoBlend,
     InvalidateCache,
     SetBlitPalette,
+    BlitImageNoBlendIf,
 
 
     gpu_message_type_last = 2147483647  // force enum to 4 bytes
