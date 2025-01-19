@@ -25,8 +25,10 @@
 #define GK_KEYJOYDIGIRIGHT      18
 #define GK_KEYJOYDIGIUP         19
 #define GK_KEYJOYDIGIDOWN       20
+#define GK_KEYLB                21
+#define GK_KEYRB                22
 
-#define GK_NUMKEYS              21
+#define GK_NUMKEYS              23
 
 struct prockeymap_t
 {
