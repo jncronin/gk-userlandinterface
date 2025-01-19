@@ -161,6 +161,7 @@ enum syscall_no
     __syscall_audiogetbufferpos,
     
     __syscall_cmpxchg,
+    __syscall_get_pthread_dtors,
 };
 
 /* parameters for above */
@@ -561,6 +562,14 @@ struct __syscall_cmpxchg_params
     void **oldval;
     void *newval;
     size_t sz;
+};
+
+typedef void (*dtor_t)(void*);
+struct __syscall_get_pthread_dtors_params
+{
+    size_t *len;
+    dtor_t *dtors;
+    void **vals;
 };
 
 #define GK_LED_MAIN         1
