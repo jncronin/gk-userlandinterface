@@ -68,6 +68,7 @@ struct proccreate_t
 
     uint32_t graphics_texture_size;
     const char *osd;
+    int screen_overwritten_each_frame;
 };
 
 #endif
