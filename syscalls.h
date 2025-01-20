@@ -162,6 +162,8 @@ enum syscall_no
     
     __syscall_cmpxchg,
     __syscall_get_pthread_dtors,
+    __syscall_yield,
+    __syscall_getppid,
 };
 
 /* parameters for above */
