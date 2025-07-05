@@ -72,6 +72,7 @@ struct proccreate_t
     int screen_overwritten_each_frame;
 
     int audio_max_buffer_size;
+    unsigned int screen_refresh;
 };
 
 #endif
