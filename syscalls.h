@@ -164,6 +164,8 @@ enum syscall_no
     __syscall_get_pthread_dtors,
     __syscall_yield,
     __syscall_getppid,
+
+    __syscall_getscreenmodeex,
 };
 
 /* parameters for above */
@@ -455,6 +457,11 @@ struct __syscall_ftruncate_params
 struct __syscall_getscreenmode_params
 {
     int *x, *y, *pf;
+};
+
+struct __syscall_getscreenmodeex_params
+{
+    int *x, *y, *pf, *refresh;
 };
 
 struct __syscall_readdir_params
