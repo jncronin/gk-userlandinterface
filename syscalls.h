@@ -166,6 +166,7 @@ enum syscall_no
     __syscall_getppid,
 
     __syscall_getscreenmodeex,
+    __syscall_icacheinvalidate,
 };
 
 /* parameters for above */
