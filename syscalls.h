@@ -535,6 +535,7 @@ struct __syscall_nemaenable_params
     void *irq_sem;
     pthread_mutex_t *eof_mutex;
     void *cl_a, *cl_b;
+    void *ones, *zeros;
 };
 
 struct __syscall_realpath_params
