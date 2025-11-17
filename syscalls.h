@@ -174,8 +174,8 @@ struct WaitSimpleSignal_params
 {
     union
     {
-        int32_t ival1;
-        uint32_t uval1;
+        intptr_t ival1;
+        uintptr_t uval1;
         void *pval1;
     };
     union
