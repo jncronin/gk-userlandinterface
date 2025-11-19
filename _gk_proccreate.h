@@ -1,8 +1,11 @@
 #ifndef __GK_PROCCREATE_H
 #define __GK_PROCCREATE_H
 
-#define GK_MAX_OPEN_FILES      16
-
+#if __GAMEKID__ >= 4
+#define GK_MAX_OPEN_FILES      256
+#else
+#define GK_MAX_OPEN_FILES       16
+#endif
 
 #define GK_KEYLEFT              0
 #define GK_KEYRIGHT             1
