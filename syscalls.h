@@ -595,6 +595,20 @@ extern "C"
 #define NULL ((void*)0)
 #endif
 
+#if __GAMEKID__ == 4
+static inline void __syscall(enum syscall_no sno, void *x1, void *x2, void *x3)
+{
+    register unsigned int _sno asm("x0") = sno;
+    register void *_r1 asm("x1") = x1;
+    register void *_r2 asm("x2") = x2;
+    register void *_r3 asm("x3") = x3;
+    __asm volatile
+    (
+        "svc #0                 \n"
+        :: "r"(_sno), "r"(_r1), "r"(_r2), "r"(_r3) : "memory"
+    );
+}
+#else
 static inline void __syscall(enum syscall_no sno, void *r1, void *r2, void *r3)
 {
     register unsigned int _sno asm("r0") = sno;
@@ -607,6 +621,7 @@ static inline void __syscall(enum syscall_no sno, void *r1, void *r2, void *r3)
         :: "r"(_sno), "r"(_r1), "r"(_r2), "r"(_r3) : "memory"
     );
 }
+#endif
 
 static inline void *__syscall_GetThreadHandle()
 {
