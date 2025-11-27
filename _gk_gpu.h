@@ -3,6 +3,21 @@
 
 #include <stdint.h>
 
+#if __GAMEKID__ == 4
+#define GK_PIXELFORMAT_ARGB8888     0
+#define GK_PIXELFORMAT_ABGR8888     1
+#define GK_PIXELFORMAT_RGBA8888     2
+#define GK_PIXELFORMAT_BGRA8888     3
+#define GK_PIXELFORMAT_RGB565       4
+#define GK_PIXELFORMAT_BGR565       5
+#define GK_PIXELFORMAT_RGB888       6
+#define GK_PIXELFORMAT_XRGB8888     7
+#define GK_PIXELFORMAT_L8           8
+#define GK_PIXELFORMAT_A8L8         9
+#define GK_PIXELFORMAT_A4L4         10
+
+#define GK_PIXELFORMAT_MAX          10
+#else
 #define GK_PIXELFORMAT_ARGB8888     0
 #define GK_PIXELFORMAT_RGB888       1
 #define GK_PIXELFORMAT_RGB565       2
@@ -10,6 +25,7 @@
 #define GK_PIXELFORMAT_ARGB4444     4
 #define GK_PIXELFORMAT_L8           5
 #define GK_PIXELFORMAT_XRGB8888     (((GK_PIXELFORMAT_RGB888) << 8) | (GK_PIXELFORMAT_ARGB8888))
+#endif
 
 enum gpu_message_type
 {
