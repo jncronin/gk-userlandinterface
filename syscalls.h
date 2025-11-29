@@ -167,7 +167,9 @@ enum syscall_no
 
     __syscall_getscreenmodeex,
     __syscall_icacheinvalidate,
-    __syscall_setscreenmode
+
+    __syscall_setscreenmode,
+    __syscall_flipscreen,
 };
 
 /* parameters for above */

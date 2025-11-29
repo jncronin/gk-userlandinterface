@@ -47,6 +47,17 @@ enum gpu_message_type
     gpu_message_type_last = 2147483647  // force enum to 4 bytes
 };
 
+#if __GAMEKID__ == 4
+struct gpu_message
+{
+    uintptr_t dest_addr;
+    uintptr_t src_addr_color;
+    enum gpu_message_type type;
+    uint32_t dest_pf;
+    uint32_t src_pf;
+    uint16_t dx, dy, sx, sy, w, h, dp, sp, dw, dh;
+};
+#else
 struct gpu_message
 {
     enum gpu_message_type type;
@@ -56,5 +67,6 @@ struct gpu_message
     uint32_t src_pf;
     uint16_t dx, dy, sx, sy, w, h, dp, sp, dw, dh;
 };
+#endif
 
 #endif
