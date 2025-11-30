@@ -15,7 +15,7 @@
 #define GK_PIXELFORMAT_L8           8
 #define GK_PIXELFORMAT_A8L8         9
 #define GK_PIXELFORMAT_A4L4         10
-#define GK_PIXELFORMAT_ARBG1555     11
+#define GK_PIXELFORMAT_ARGB1555     11
 #define GK_PIXELFORMAT_ARGB4444     12
 
 #define GK_PIXELFORMAT_MAX          12
