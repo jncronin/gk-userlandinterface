@@ -170,6 +170,10 @@ enum syscall_no
 
     __syscall_setscreenmode,
     __syscall_flipscreen,
+
+    __syscall_get_arg_count,
+    __syscall_get_iarg_size,
+    __syscall_get_iarg,
 };
 
 /* parameters for above */
