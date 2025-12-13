@@ -26,7 +26,7 @@ struct gk_kernel_info
     unsigned int page_size;
 } __attribute__((packed));
 
-#define GK_KERNEL_INFO (const gk_kernel_info *)(GK_KERNEL_INFO_PAGE);
+#define GK_KERNEL_INFO ((const struct gk_kernel_info *)(GK_KERNEL_INFO_PAGE))
 
 #else
 #define GK_TLS_POINTER_ADDRESS      0x58004518U
