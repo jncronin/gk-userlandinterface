@@ -174,6 +174,8 @@ enum syscall_no
     __syscall_get_arg_count,
     __syscall_get_iarg_size,
     __syscall_get_iarg,
+
+    __syscall_setpalette,
 };
 
 /* parameters for above */
@@ -470,6 +472,12 @@ struct __syscall_getscreenmode_params
 struct __syscall_getscreenmodeex_params
 {
     int *x, *y, *pf, *refresh;
+};
+
+struct __syscall_setpalette_params
+{
+    unsigned int ncols;
+    const uint32_t *cols;
 };
 
 struct __syscall_readdir_params
