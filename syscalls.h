@@ -216,6 +216,9 @@ struct __syscall_pthread_create_params
     const pthread_attr_t *attr;
     void *(*start_routine)(void *);
     void *arg;
+#if __GAMEKID__ == 4
+    void *arg2;
+#endif
 };
 
 struct __syscall_socket_params
