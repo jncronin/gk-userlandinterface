@@ -40,8 +40,20 @@
 
 #define GK_NUMKEYS              30
 
+#define GK_STICK_DIGITAL        0
+#define GK_STICK_JOY0           1
+#define GK_STICK_JOY1           2
+#define GK_STICK_JOY2           3
+#define GK_STICK_MOUSE          4
+
 struct prockeymap_t
 {
+#if __GAMEKID__ >= 4
+    char left_stick;
+    char right_stick;
+    char tilt_stick;
+    char touch_is_mouse;
+#else
     char gamepad_is_keyboard;
     char gamepad_is_mouse;
     char gamepad_is_joystick;
@@ -50,6 +62,7 @@ struct prockeymap_t
     char joystick_is_joystick;
     char touch_is_mouse;
     char joystick_is_mouse;
+#endif
     unsigned short int gamepad_to_scancode[GK_NUMKEYS];
 };
 
