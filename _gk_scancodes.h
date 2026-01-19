@@ -27,6 +27,8 @@
 
 // Modified for GK
 
+#include "_gk_proccreate.h"
+
 #ifndef __gk_scancode_h_
 #define __gk_scancode_h_
 
@@ -430,6 +432,12 @@ typedef enum
     /* @} *//* Mobile keys */
 
     /* Add any other keys here. */
+
+    GK_MOUSE_BUTTON = 300,
+    GK_MOUSE_END = 399,
+
+    GK_GAMEPAD_BUTTON = 400,
+    GK_GAMEPAD_END = 499,
 
     GK_NUM_SCANCODES = 512, /**< not a key, just marks the number of scancodes
                                  for array bounds */
