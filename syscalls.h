@@ -432,6 +432,7 @@ struct __syscall_mmapv4_params
     int is_read;
     int is_write;
     int is_exec;
+    int fd;
 };
 
 struct __syscall_memalloc_params
