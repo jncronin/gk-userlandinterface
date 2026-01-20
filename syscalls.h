@@ -176,6 +176,7 @@ enum syscall_no
     __syscall_get_iarg,
 
     __syscall_setpalette,
+    __syscall_mmapv4,
 };
 
 /* parameters for above */
@@ -421,6 +422,16 @@ struct __syscall_pthread_cond_timedwait_params
     pthread_mutex_t *mutex;
     const struct timespec *abstime;
     int *signalled;
+};
+
+struct __syscall_mmapv4_params
+{
+    size_t len;
+    void **retaddr;
+    int is_sync;
+    int is_read;
+    int is_write;
+    int is_exec;
 };
 
 struct __syscall_memalloc_params
