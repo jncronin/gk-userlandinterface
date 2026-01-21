@@ -21,6 +21,9 @@
 #define GK_JOYSTICKB_ADDRESS        (GK_CM33_USERSPACE_PAGE + 12)
 #define GK_TILT_ADDRESS             (GK_CM33_USERSPACE_PAGE + 20)
 
+#define GK_HEAP_START               0x3ffc0000000ULL
+#define GK_STACKS_START             0x3ffa0000000ULL
+
 struct gk_kernel_info
 {
     unsigned int gk_ver;
