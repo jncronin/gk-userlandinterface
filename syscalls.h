@@ -434,6 +434,7 @@ struct __syscall_mmapv4_params
     int is_exec;
     int fd;
     int is_fixed;
+    size_t foffset;
 };
 
 struct __syscall_memalloc_params
