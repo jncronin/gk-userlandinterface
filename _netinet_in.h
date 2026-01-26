@@ -31,6 +31,7 @@ struct sockaddr_in
 
 #define IPPROTO_RAW     0x7fffffff
 #define IPPROTO_IP      0x0800
+#define IPPROTO_IPV6    0x86dd
 #define IPPROTO_TCP     0x06
 #define IPPROTO_UDP     0x11
 #define IPPROTO_ICMP    0x01
@@ -43,6 +44,7 @@ struct sockaddr_in
 
 #define PF_UNIX         (AF_UNIX)
 #define PF_INET         (AF_INET)
+#define PF_INET6        (AF_INET6)
 
 #define AF_UNSPEC       0xff
 
