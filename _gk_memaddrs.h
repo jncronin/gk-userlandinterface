@@ -24,6 +24,8 @@
 #define GK_HEAP_START               0x3ffc0000000ULL
 #define GK_STACKS_START             0x3ffa0000000ULL
 
+#include <stdint.h>
+
 struct gk_kernel_info
 {
     unsigned int gk_ver;
@@ -31,6 +33,11 @@ struct gk_kernel_info
     unsigned int max_screen_height;
     unsigned int ncores;
     unsigned int page_size;
+
+    uint64_t joystick_buttons;
+    unsigned int joystick_nbuttons;
+    unsigned int joystick_naxes;
+    int16_t *joystick_axes[6];
 } __attribute__((packed));
 
 #define GK_KERNEL_INFO ((const struct gk_kernel_info *)(GK_KERNEL_INFO_PAGE))
