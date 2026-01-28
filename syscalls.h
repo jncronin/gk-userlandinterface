@@ -177,6 +177,7 @@ enum syscall_no
 
     __syscall_setpalette,
     __syscall_mmapv4,
+    __syscall_joystick_calib
 };
 
 /* parameters for above */
@@ -614,6 +615,12 @@ struct __syscall_get_pthread_dtors_params
     size_t *len;
     dtor_t *dtors;
     void **vals;
+};
+
+struct __syscall_joystick_calib_params
+{
+    unsigned int axis_pair;
+    int left, right, top, bottom, middle_x, middle_y;
 };
 
 #define GK_LED_MAIN         1
