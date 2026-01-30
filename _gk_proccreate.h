@@ -46,6 +46,15 @@
 #define GK_STICK_JOY2           3
 #define GK_STICK_MOUSE          4
 
+/* If the app completely redraws the screen each frame*/
+#define GK_SCREEN_UPDATE_FULL                   0
+/* If the app only updates part of the screen each frame,
+    but does not read from the unchanged data back from the framebuffer */
+#define GK_SCREEN_UPDATE_PARTIAL_NOREADBACK     1
+/* If the app only updates part of the screen each frame, and expects to
+    read back the unchanged data from previous frames */
+#define GK_SCREEN_UPDATE_PARTIAL_READBACK       2
+
 struct prockeymap_t
 {
 #if __GAMEKID__ >= 4
