@@ -105,6 +105,7 @@ struct proccreate_t
 
     int audio_max_buffer_size;
     unsigned int screen_refresh;
+    unsigned int cpu_freq;
 };
 
 #endif
