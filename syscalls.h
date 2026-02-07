@@ -652,17 +652,84 @@ extern "C"
 #endif
 
 #if __GAMEKID__ == 4
+#if GK_PROFILE_SYSCALLS
+#include <stdio.h>
+
+struct timespec clock_cur();
+
+static inline unsigned long int __timespec_diff(const struct timespec *t0, const struct timespec *t1,
+    struct timespec *tdiff)
+{
+    tdiff->tv_sec = t1->tv_sec;
+    tdiff->tv_nsec = t1->tv_nsec - t0->tv_nsec;
+    if(tdiff->tv_nsec < 0)
+    {
+        tdiff->tv_nsec += 1000000000;
+        tdiff->tv_sec--;
+    }
+    tdiff->tv_sec -= t0->tv_sec;
+
+    unsigned long int tdiff_ns = ((unsigned long int)tdiff->tv_nsec) +
+        (((unsigned long int)tdiff->tv_sec) * 1000000000UL);
+    
+    return tdiff_ns;
+}
+
+static void __dump_profile(int sno, const struct syscall_profile_v1 *prof)
+{
+    static int nsyscalls = 0;
+    if((nsyscalls++ % 1000) == 0)
+    {
+        // do dump
+        const struct timespec *t0_tot = &prof->profile_times[0];
+        const struct timespec *tlast_tot = &prof->profile_times[prof->n_prof - 1];
+        struct timespec tdiff_tot;
+        unsigned long int tdiff_tot_ns = __timespec_diff(t0_tot, tlast_tot, &tdiff_tot);
+
+        printf("syscall_dump (%d): total %lu ns, flags: %x\n", sno, tdiff_tot_ns, prof->ver_flags);
+        for(size_t i = 0; i < (prof->n_prof - 1); i++)
+        {
+            const struct timespec *t0 = &prof->profile_times[i];
+            const struct timespec *t1 = &prof->profile_times[i + 1];
+            struct timespec tdiff;
+
+            unsigned long int tdiff_ns = __timespec_diff(t0, t1, &tdiff);
+
+            printf("syscall_dump (%d): %d - %d: %lu ns\n", sno, i, i+1, tdiff_ns);
+        }
+    }
+}
+#endif
+
 static inline void __syscall(enum syscall_no sno, void *x1, void *x2, void *x3)
 {
+#if GK_PROFILE_SYSCALLS
+    struct syscall_profile_v1 prof = { 0 };
+    prof.ver_flags = 1;
+    x1 = (void *)(((uintptr_t) x1) | (1UL << 63));
+    PROFILE_NOW(&prof);
+#endif
+
     register unsigned int _sno asm("x0") = sno;
     register void *_r1 asm("x1") = x1;
     register void *_r2 asm("x2") = x2;
     register void *_r3 asm("x3") = x3;
+    
+#if GK_PROFILE_SYSCALLS
+    register void *_r4 asm("x4") = (void *)&prof;
+#else
+    register void *_r4 asm("x4") = (void *)0;
+#endif
     __asm volatile
     (
         "svc #0                 \n"
-        :: "r"(_sno), "r"(_r1), "r"(_r2), "r"(_r3) : "memory"
+        :: "r"(_sno), "r"(_r1), "r"(_r2), "r"(_r3), "r"(_r4) : "memory"
     );
+
+#if GK_PROFILE_SYSCALLS
+    PROFILE_NOW(&prof);
+    __dump_profile((int)sno, &prof);
+#endif
 }
 #else
 static inline void __syscall(enum syscall_no sno, void *r1, void *r2, void *r3)
