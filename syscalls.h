@@ -15,6 +15,23 @@
 #include "_gk_gpu.h"
 #include "_gk_memaddrs.h"
 
+struct syscall_profile_v1
+{
+    uintptr_t ver_flags;
+    size_t n_prof;
+    struct timespec profile_times[8];
+};
+
+#if GK_PROFILE_SYSCALLS
+#define PROFILE_NOW(x) \
+    do { \
+        if((x) && (x)->n_prof <= ((sizeof((x)->profile_times) / sizeof((x)->profile_times[0])))) \
+            (x)->profile_times[(x)->n_prof++] = clock_cur(); \
+    } while(0);
+#else
+#define PROFILE_NOW(x)
+#endif
+
 enum syscall_no
 {
     StartFirstThread = 0,
