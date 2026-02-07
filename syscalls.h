@@ -194,7 +194,8 @@ enum syscall_no
 
     __syscall_setpalette,
     __syscall_mmapv4,
-    __syscall_joystick_calib
+    __syscall_joystick_calib,
+    __syscall_setgoldenthread
 };
 
 /* parameters for above */
