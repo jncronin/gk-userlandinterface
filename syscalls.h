@@ -646,8 +646,8 @@ struct __syscall_joystick_calib_params
 
 struct __syscall_pthread_barrier_init_params
 {
-    pthread_barrier_t *barrier;
-    const pthread_barrierattr_t *attr;
+    int *barrier;
+    const void *attr;
     unsigned int count;
 };
 
