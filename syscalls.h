@@ -195,7 +195,10 @@ enum syscall_no
     __syscall_setpalette,
     __syscall_mmapv4,
     __syscall_joystick_calib,
-    __syscall_setgoldenthread
+    __syscall_setgoldenthread,
+    __syscall_pthread_barrier_init,
+    __syscall_pthread_barrier_wait,
+    __syscall_pthread_barrier_destroy
 };
 
 /* parameters for above */
@@ -639,6 +642,13 @@ struct __syscall_joystick_calib_params
 {
     unsigned int axis_pair;
     int left, right, top, bottom, middle_x, middle_y;
+};
+
+struct __syscall_pthread_barrier_init_params
+{
+    pthread_barrier_t *barrier;
+    const pthread_barrierattr_t *attr;
+    unsigned int count;
 };
 
 #define GK_LED_MAIN         1
