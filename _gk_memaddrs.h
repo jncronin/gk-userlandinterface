@@ -40,6 +40,19 @@ struct gk_kernel_info
     unsigned int joystick_nbuttons;
     unsigned int joystick_naxes;
     int16_t *joystick_axes[6];
+
+    int brightness;
+    int volume;
+    bool pwr_vbus;
+    int soc;
+    int wifi_state;
+    int usb_state;
+    int bt_state;
+    double fps;
+    double temp;
+    double vsys;
+    double psys;
+    double cpu_usage;
 } __attribute__((packed));
 
 #define GK_KERNEL_INFO ((const struct gk_kernel_info *)(GK_KERNEL_INFO_PAGE))
