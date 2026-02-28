@@ -198,7 +198,8 @@ enum syscall_no
     __syscall_setgoldenthread,
     __syscall_pthread_barrier_init,
     __syscall_pthread_barrier_wait,
-    __syscall_pthread_barrier_destroy
+    __syscall_pthread_barrier_destroy,
+    __syscall_flipscreenex,
 };
 
 /* parameters for above */
@@ -649,6 +650,12 @@ struct __syscall_pthread_barrier_init_params
     int *barrier;
     const void *attr;
     unsigned int count;
+};
+
+struct __syscall_flipscreenex_params
+{
+    unsigned int layer;
+    unsigned int alpha;
 };
 
 #define GK_LED_MAIN         1

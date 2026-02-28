@@ -57,6 +57,11 @@ struct gk_kernel_info
 
 #define GK_KERNEL_INFO ((const struct gk_kernel_info *)(GK_KERNEL_INFO_PAGE))
 
+/* Use these to mmap various bits into userspace */
+#define GK_MMAP_FD_OVERLAY_FB1      -10
+#define GK_MMAP_FD_OVERLAY_FB2      -11
+#define GK_MMAP_FD_OVERLAY_FB3      -12
+
 #else
 #define GK_TLS_POINTER_ADDRESS      0x58004518U
 #define GK_CUR_MS_ADDRESS           0x58004500U
