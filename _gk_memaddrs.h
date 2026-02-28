@@ -43,7 +43,7 @@ struct gk_kernel_info
 
     int brightness;
     int volume;
-    bool pwr_vbus;
+    int pwr_vbus;
     int soc;
     int wifi_state;
     int usb_state;
