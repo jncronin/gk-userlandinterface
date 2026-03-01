@@ -108,4 +108,9 @@ struct proccreate_t
     unsigned int cpu_freq;
 };
 
+struct gk_supervisor_visible_region
+{
+    unsigned int x, y, w, h;
+};
+
 #endif

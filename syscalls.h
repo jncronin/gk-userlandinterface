@@ -202,7 +202,8 @@ enum syscall_no
     __syscall_flipscreenex,
     __syscall_getfocusprocess,
     __syscall_getscreenmodeforprocess,
-    __syscall_getprocessname
+    __syscall_getprocessname,
+    __syscall_setsupervisorvisibleex
 };
 
 /* parameters for above */
@@ -675,6 +676,13 @@ struct __syscall_getprocessname_params
     pid_t pid;
     char *name;
     size_t len;
+};
+
+struct __syscall_setsupervisorvisibleex_params
+{
+    int visible;
+    const struct gk_supervisor_visible_region *regs;
+    size_t nregs;
 };
 
 #define GK_LED_MAIN         1
