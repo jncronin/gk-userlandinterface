@@ -203,7 +203,8 @@ enum syscall_no
     __syscall_getfocusprocess,
     __syscall_getscreenmodeforprocess,
     __syscall_getprocessname,
-    __syscall_setsupervisorvisibleex
+    __syscall_setsupervisorvisibleex,
+    __syscall_setbrightness
 };
 
 /* parameters for above */
