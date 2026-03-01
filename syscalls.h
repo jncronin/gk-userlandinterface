@@ -200,6 +200,9 @@ enum syscall_no
     __syscall_pthread_barrier_wait,
     __syscall_pthread_barrier_destroy,
     __syscall_flipscreenex,
+    __syscall_getfocusprocess,
+    __syscall_getscreenmodeforprocess,
+    __syscall_getprocessname
 };
 
 /* parameters for above */
@@ -656,6 +659,22 @@ struct __syscall_flipscreenex_params
 {
     unsigned int layer;
     unsigned int alpha;
+};
+
+struct __syscall_getscreenmodeforprocess_params
+{
+    pid_t pid;
+    size_t *w;
+    size_t *h;
+    unsigned int *pf;
+    int *refresh;
+};
+
+struct __syscall_getprocessname_params
+{
+    pid_t pid;
+    char *name;
+    size_t len;
 };
 
 #define GK_LED_MAIN         1
