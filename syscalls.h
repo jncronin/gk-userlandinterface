@@ -206,7 +206,8 @@ enum syscall_no
     __syscall_setsupervisorvisibleex,
     __syscall_setbrightness,
     __syscall_wifienable,
-    __syscall_rawsdenable
+    __syscall_rawsdenable,
+    __syscall_audiosetvolume
 };
 
 /* parameters for above */
