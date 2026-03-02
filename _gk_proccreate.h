@@ -1,6 +1,8 @@
 #ifndef __GK_PROCCREATE_H
 #define __GK_PROCCREATE_H
 
+#include <stddef.h>
+
 #if __GAMEKID__ >= 4
 #define GK_MAX_OPEN_FILES      256
 #else
