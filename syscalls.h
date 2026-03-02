@@ -207,7 +207,9 @@ enum syscall_no
     __syscall_setbrightness,
     __syscall_wifienable,
     __syscall_rawsdenable,
-    __syscall_audiosetvolume
+    __syscall_audiosetvolume,
+    __syscall_setprocessdata,
+    __syscall_getprocessdata
 };
 
 /* parameters for above */
@@ -687,6 +689,20 @@ struct __syscall_setsupervisorvisibleex_params
     int visible;
     const struct gk_supervisor_visible_region *regs;
     size_t nregs;
+};
+
+struct __syscall_getprocessdata_params
+{
+    pid_t pid;
+    char *buf;
+    size_t len;
+};
+
+struct __syscall_setprocessdata_params
+{
+    pid_t pid;
+    const char *buf;
+    size_t len;
 };
 
 #define GK_LED_MAIN         1

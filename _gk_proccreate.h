@@ -106,6 +106,9 @@ struct proccreate_t
     int audio_max_buffer_size;
     unsigned int screen_refresh;
     unsigned int cpu_freq;
+
+    const char *processdata;
+    size_t nprocessdata;
 };
 
 struct gk_supervisor_visible_region
