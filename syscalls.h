@@ -204,7 +204,9 @@ enum syscall_no
     __syscall_getscreenmodeforprocess,
     __syscall_getprocessname,
     __syscall_setsupervisorvisibleex,
-    __syscall_setbrightness
+    __syscall_setbrightness,
+    __syscall_wifienable,
+    __syscall_rawsdenable
 };
 
 /* parameters for above */
