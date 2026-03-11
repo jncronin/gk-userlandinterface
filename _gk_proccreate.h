@@ -39,8 +39,10 @@
 #define GK_KEYJOYBDIGIDOWN      27
 #define GK_KEYLT                28
 #define GK_KEYRT                29
+#define GK_KEYSELECT            30
+#define GK_KEYSTART             31
 
-#define GK_NUMKEYS              30
+#define GK_NUMKEYS              32
 
 #define GK_STICK_DIGITAL        0
 #define GK_STICK_JOY0           1
