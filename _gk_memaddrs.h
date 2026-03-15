@@ -58,6 +58,8 @@ struct gk_kernel_info
     double vsys;
     double psys;
     double cpu_usage;
+
+    int16_t *mouse_axes[2];
 } __attribute__((packed));
 
 #define GK_KERNEL_INFO ((const struct gk_kernel_info *)(GK_KERNEL_INFO_PAGE))
