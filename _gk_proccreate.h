@@ -65,6 +65,7 @@ struct prockeymap_t
     char left_stick;
     char right_stick;
     char tilt_stick;
+    char throttle_stick;
     char touch_is_mouse;
 #else
     char gamepad_is_keyboard;
