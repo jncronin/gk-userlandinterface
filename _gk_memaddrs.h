@@ -44,7 +44,7 @@ struct gk_kernel_info
     uint64_t joystick_buttons;
     unsigned int joystick_nbuttons;
     unsigned int joystick_naxes;
-    int16_t *joystick_axes[6];
+    int16_t *joystick_axes[8];
 
     int brightness;
     int volume;
