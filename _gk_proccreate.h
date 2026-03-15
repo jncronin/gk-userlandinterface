@@ -48,7 +48,8 @@
 #define GK_STICK_JOY0           1
 #define GK_STICK_JOY1           2
 #define GK_STICK_JOY2           3
-#define GK_STICK_MOUSE          4
+#define GK_STICK_JOY3           4
+#define GK_STICK_MOUSE          10
 
 /* If the app completely redraws the screen each frame*/
 #define GK_SCREEN_UPDATE_FULL                   0
