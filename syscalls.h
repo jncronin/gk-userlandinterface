@@ -210,7 +210,9 @@ enum syscall_no
     __syscall_audiosetvolume,
     __syscall_setprocessdata,
     __syscall_getprocessdata,
-    __syscall_sendevent
+    __syscall_sendevent,
+    __syscall_getndl,
+    __syscall_getdl
 };
 
 /* parameters for above */
@@ -710,6 +712,16 @@ struct __syscall_sendevent_params
 {
     pid_t pid;
     void *ev;
+};
+
+struct __syscall_getdl_params
+{
+    int dl_id;
+    int *fd;
+    char **name;
+    size_t *namelen;
+    void **img;
+    void **baseaddr;
 };
 
 #define GK_LED_MAIN         1
