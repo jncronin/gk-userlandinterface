@@ -718,7 +718,7 @@ struct __syscall_getdl_params
 {
     int dl_id;
     int *fd;
-    char **name;
+    char *name;
     size_t *namelen;
     void **img;
     void **baseaddr;
