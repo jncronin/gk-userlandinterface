@@ -212,7 +212,8 @@ enum syscall_no
     __syscall_getprocessdata,
     __syscall_sendevent,
     __syscall_getndl,
-    __syscall_getdl
+    __syscall_getdl,
+    __syscall_ioctl,
 };
 
 /* parameters for above */
@@ -722,6 +723,14 @@ struct __syscall_getdl_params
     size_t *namelen;
     void **img;
     void **baseaddr;
+};
+
+struct __syscall_ioctl_params
+{
+    int fd;
+    unsigned int nr;
+    void *ptr;
+    size_t len;
 };
 
 #define GK_LED_MAIN         1
