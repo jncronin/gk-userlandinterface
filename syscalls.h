@@ -214,6 +214,7 @@ enum syscall_no
     __syscall_getndl,
     __syscall_getdl,
     __syscall_ioctl,
+    __syscall_readlink,
 };
 
 /* parameters for above */
@@ -731,6 +732,13 @@ struct __syscall_ioctl_params
     unsigned int nr;
     void *ptr;
     size_t len;
+};
+
+struct __syscall_readlink_params
+{
+    const char *pathname;
+    char *buf;
+    size_t bufsize;
 };
 
 #define GK_LED_MAIN         1
