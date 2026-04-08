@@ -41,6 +41,7 @@ struct sync_file_info {
 	uint64_t	sync_fence_info;
 };
 
+#ifdef GKOS_KERNEL
 struct drm_mode_create_dumb {
 	uint32_t height;
 	uint32_t width;
@@ -61,6 +62,7 @@ struct drm_mode_map_dumb {
 struct drm_mode_destroy_dumb {
     uint32_t handle;
 };
+#endif
 
 #define TIOCGWINSZ  1
 #define TIOCSCTTY   2
