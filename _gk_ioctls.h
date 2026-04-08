@@ -1,6 +1,8 @@
 #ifndef _GK_IOCTLS_H
 #define _GK_IOCTLS_H
 
+#include <stdint.h>
+
 /* We try not to use ioctls in gk but rather dedicated interfaces, however some
     userland software insists on using it, so handle that here */
 
@@ -21,10 +23,29 @@ struct sync_merge_data
     unsigned int pad;
 };
 
+struct sync_fence_info {
+	char	    obj_name[32];
+	char	    driver_name[32];
+	int32_t	    status;
+    uint32_t    flags;
+	uint64_t	timestamp_ns;
+};
+
+struct sync_file_info {
+	char	    name[32];
+	int32_t	    status;
+    uint32_t    flags;
+	uint32_t	num_fences;
+    uint32_t    pad;
+
+	uint64_t	sync_fence_info;
+};
+
 #define TIOCGWINSZ  1
 #define TIOCSCTTY   2
 
 #define SYNC_IOC_MERGE      0x00010000
+#define SYNC_IOC_FILE_INFO  0x00010001
 
 #define _IOC_NRBITS	8
 #define _IOC_TYPEBITS	8
