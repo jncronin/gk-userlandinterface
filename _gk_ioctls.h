@@ -21,6 +21,27 @@ struct sync_merge_data
     unsigned int pad;
 };
 
+struct drm_mode_create_dumb {
+	uint32_t height;
+	uint32_t width;
+	uint32_t bpp;
+	uint32_t flags;
+
+	uint32_t handle;
+	uint32_t pitch;
+	uint64_t size;
+};
+
+struct drm_mode_map_dumb {
+    uint32_t handle;
+    uint32_t pad;
+    uint64_t offset;
+};
+
+struct drm_mode_destroy_dumb {
+    uint32_t handle;
+};
+
 #define TIOCGWINSZ  1
 #define TIOCSCTTY   2
 
