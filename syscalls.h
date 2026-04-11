@@ -216,7 +216,7 @@ enum syscall_no
     __syscall_ioctl,
     __syscall_readlink,
     __syscall_opengl_makerenderbuffer,
-    __syscall_opengl_fliprenderbuffer,
+    __syscall_opengl_getrenderbuffer,
 };
 
 /* parameters for above */
