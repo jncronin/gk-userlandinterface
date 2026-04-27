@@ -217,6 +217,7 @@ enum syscall_no
     __syscall_readlink,
     __syscall_opengl_makerenderbuffer,
     __syscall_opengl_getrenderbuffer,
+    __syscall_joystick_deadzone,
 };
 
 /* parameters for above */
@@ -741,6 +742,12 @@ struct __syscall_readlink_params
     const char *pathname;
     char *buf;
     size_t bufsize;
+};
+
+struct __syscall_joystick_deadzone_params
+{
+    unsigned int digital;
+    unsigned int analog;
 };
 
 #define GK_LED_MAIN         1
