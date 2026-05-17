@@ -53,4 +53,13 @@ struct sockaddr_in
 #define SOCK_SEQPACKET  2
 #define SOCK_STREAM     3
 
+#define SO_BROADCAST    2
+#define SO_KEEPALIVE    3
+#define SO_REUSEADDR    4
+#define SO_SNDBUF       5
+#define SO_RCVBUF       6
+#define SO_ERROR        7
+#define SO_RCVTIMEO     9
+#define SO_SNDTIMEO     10
+
 #endif
