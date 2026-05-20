@@ -218,6 +218,8 @@ enum syscall_no
     __syscall_opengl_makerenderbuffer,
     __syscall_opengl_getrenderbuffer,
     __syscall_joystick_deadzone,
+    __syscall_dmabuf_alloc,
+    __syscall_setcursor,
 };
 
 /* parameters for above */
@@ -748,6 +750,12 @@ struct __syscall_joystick_deadzone_params
 {
     unsigned int digital;
     unsigned int analog;
+};
+
+struct __syscall_setcursor_params
+{
+    int fd;
+    unsigned int w, h, hx, hy, alpha, pf, stride;
 };
 
 #define GK_LED_MAIN         1
