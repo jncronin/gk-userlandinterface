@@ -220,6 +220,7 @@ enum syscall_no
     __syscall_joystick_deadzone,
     __syscall_dmabuf_alloc,
     __syscall_setcursor,
+    __syscall_warpcursor,
 };
 
 /* parameters for above */
@@ -756,6 +757,11 @@ struct __syscall_setcursor_params
 {
     int fd;
     unsigned int w, h, hx, hy, alpha, pf, stride;
+};
+
+struct __syscall_warpcursor_params
+{
+    unsigned int x, y;
 };
 
 #define GK_LED_MAIN         1
