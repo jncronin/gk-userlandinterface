@@ -70,6 +70,8 @@ struct gk_kernel_info
 #define GK_MMAP_FD_OVERLAY_FB2      -11
 #define GK_MMAP_FD_OVERLAY_FB3      -12
 
+#define GK_FD_CURSOR_ARROW          -20
+
 #else
 #define GK_TLS_POINTER_ADDRESS      0x58004518U
 #define GK_CUR_MS_ADDRESS           0x58004500U
