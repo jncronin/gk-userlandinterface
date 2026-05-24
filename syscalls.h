@@ -221,6 +221,9 @@ enum syscall_no
     __syscall_dmabuf_alloc,
     __syscall_setcursor,
     __syscall_warpcursor,
+    __syscall_wifi_clearknownnetworks,
+    __syscall_wifi_addopennetwork,
+    __syscall_wifi_addpsknetwork,
 };
 
 /* parameters for above */
@@ -762,6 +765,19 @@ struct __syscall_setcursor_params
 struct __syscall_warpcursor_params
 {
     unsigned int x, y;
+};
+
+struct __syscall_wifi_addopennetwork_params
+{
+    const char *ssid;
+    int ch;
+};
+
+struct __syscall_wifi_addpsknetwork_params
+{
+    const char *ssid;
+    int ch;
+    const char *psk;
 };
 
 #define GK_LED_MAIN         1
