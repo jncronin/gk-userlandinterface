@@ -41,15 +41,32 @@
 #define GK_KEYRT                29
 #define GK_KEYSELECT            30
 #define GK_KEYSTART             31
+#define GK_THROTTLE_DETENT_0    32
+#define GK_THROTTLE_DETENT_1    33
+#define GK_THROTTLE_DETENT_2    34
+#define GK_THROTTLE_DETENT_3    35
+#define GK_THROTTLE_DETENT_4    36
+#define GK_THROTTLE_DETENT_5    37
+#define GK_THROTTLE_DETENT_6    38
+#define GK_THROTTLE_DETENT_7    39
+#define GK_THROTTLE_DETENT_8    40
+#define GK_THROTTLE_DETENT_9    41
+#define GK_THROTTLE_DETENT_10   42
+#define GK_THROTTLE_DETENT_11   43
+#define GK_THROTTLE_DETENT_12   44
+#define GK_THROTTLE_DETENT_13   45
+#define GK_THROTTLE_DETENT_14   46
 
-#define GK_NUMKEYS              32
+#define GK_NUMKEYS              47
 
-#define GK_STICK_DIGITAL        0
-#define GK_STICK_JOY0           1
-#define GK_STICK_JOY1           2
-#define GK_STICK_JOY2           3
-#define GK_STICK_JOY3           4
-#define GK_STICK_MOUSE          10
+#define GK_STICK_DIGITAL            0
+#define GK_STICK_JOY0               1
+#define GK_STICK_JOY1               2
+#define GK_STICK_JOY2               3
+#define GK_STICK_JOY3               4
+#define GK_STICK_MOUSE              10
+#define GK_STICK_THROTTLE_DETENT        20
+#define GK_STICK_THROTTLE_DETENT_MAX    30
 
 /* If the app completely redraws the screen each frame*/
 #define GK_SCREEN_UPDATE_FULL                   0
