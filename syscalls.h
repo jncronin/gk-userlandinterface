@@ -224,6 +224,8 @@ enum syscall_no
     __syscall_wifi_clearknownnetworks,
     __syscall_wifi_addopennetwork,
     __syscall_wifi_addpsknetwork,
+    __syscall_shutdown,
+    __syscall_reboot
 };
 
 /* parameters for above */
