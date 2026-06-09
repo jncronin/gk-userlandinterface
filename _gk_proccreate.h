@@ -67,6 +67,8 @@
 #define GK_STICK_MOUSE              10
 #define GK_STICK_THROTTLE_DETENT        20
 #define GK_STICK_THROTTLE_DETENT_MAX    30
+#define GK_STICK_LOW_MASK           0x1f
+#define GK_STICK_4WAY               0x20
 
 /* If the app completely redraws the screen each frame*/
 #define GK_SCREEN_UPDATE_FULL                   0
