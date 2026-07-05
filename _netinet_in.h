@@ -47,6 +47,7 @@ struct sockaddr_in
 #define PF_INET6        (AF_INET6)
 
 #define AF_UNSPEC       0xff
+#define PF_UNSPEC       (AF_UNSPEC)
 
 #define SOCK_DGRAM      0
 #define SOCK_RAW        1
