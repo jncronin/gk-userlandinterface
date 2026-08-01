@@ -226,7 +226,8 @@ enum syscall_no
     __syscall_wifi_addpsknetwork,
     __syscall_shutdown,
     __syscall_reboot,
-    __syscall_symlink
+    __syscall_symlink,
+    __syscall_loadimage
 };
 
 /* parameters for above */
@@ -787,6 +788,12 @@ struct __syscall_symlink_params
 {
     const char *target;
     const char *path;
+};
+
+struct __syscall_loadimage_params
+{
+    int fd;
+    int global;
 };
 
 #define GK_LED_MAIN         1
