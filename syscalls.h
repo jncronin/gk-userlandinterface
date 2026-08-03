@@ -230,6 +230,7 @@ enum syscall_no
     __syscall_loadimage,
     __syscall_dlopen,
     __syscall_getdlex,
+    __syscall_dlclose,
 };
 
 /* parameters for above */
@@ -815,6 +816,12 @@ struct __syscall_getdlex_params
     void **img;
     void **baseaddr;
     int *global;
+};
+
+struct __syscall_dlclose_params
+{
+    int fd;
+    int *run_fini;
 };
 
 #define GK_LED_MAIN         1
