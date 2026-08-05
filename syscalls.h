@@ -231,6 +231,7 @@ enum syscall_no
     __syscall_dlopen,
     __syscall_getdlex,
     __syscall_dlclose,
+    __syscall_settz,
 };
 
 /* parameters for above */
