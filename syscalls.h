@@ -232,6 +232,8 @@ enum syscall_no
     __syscall_getdlex,
     __syscall_dlclose,
     __syscall_settz,
+    __syscall_getnameservers,
+    __syscall_adddnsentry,
 };
 
 /* parameters for above */
@@ -823,6 +825,25 @@ struct __syscall_dlclose_params
 {
     int fd;
     int *run_fini;
+};
+
+struct __syscall_ipaddr
+{
+    int ver;
+    uint32_t addr[4];
+};
+
+struct __syscall_getnameservers_params
+{
+    size_t nentries;
+    struct __syscall_ipaddr *addrs;
+};
+
+struct __syscall_adddnsentry_params
+{
+    const char *host;
+    size_t nentries;
+    struct __syscall_ipaddr *addrs;
 };
 
 #define GK_LED_MAIN         1
